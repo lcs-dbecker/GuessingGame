@@ -10,16 +10,31 @@ import Foundation
 
 struct GuessingGame {
     
-    //Properties
+    // MARK: Properties
     var numberToGuess : Int
     
-    //Initializer
+    // MARK: Initializer
     init() {
         //Generate the random number
         numberToGuess = Int (arc4random_uniform(501))// Get number between 0 & 500
     }
     
+    // MARK: Functions
     
+    func checkGuessGiveFeedback(guess: Int) -> String {
+        
+        // Compare a guess
+        if numberToGuess == guess {
+            return "Correct"
+        } else if numberToGuess < guess {
+            return "Lower"
+            
+        } else {
+            return "Higher"
+        }
+        
+        
+    }
 }
 
 
